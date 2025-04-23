@@ -11,8 +11,22 @@
     flex-direction: column;
 }
 
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
+    align-items: center;
+}
+
 .villain-item {
     border: 1px solid black;
+}
+
+.container-item {
+    flex: 1;
 }
 
 main {
@@ -24,4 +38,10 @@ main {
 h1 {
     display: flex;
     justify-content: center;
+}
+
+img {
+    height: 300px;
+    width: auto;
+    object-fit: scale-down;
 }
