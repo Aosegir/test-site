@@ -29,11 +29,12 @@
     flex: 1;
 }
 
-main {
+.guardian-grid {
     display: grid;
     grid-template-rows: repeat(3, 350px);
     grid-template-columns: repeat(2, 50%);
 }
+
 
 h1 {
     display: flex;
@@ -44,4 +45,60 @@ img {
     height: 300px;
     width: auto;
     object-fit: scale-down;
+}
+
+/* MAP STUFF */
+
+.map {
+    display: grid;
+    grid-template: repeat(6, 100px) / repeat(6, 100px);
+    background-color: lightblue;
+    grid-template-areas: 
+    ". . . tower . ."
+    ". . study tower . ."
+    ". . study tower . ."
+    ". . citadel citadel . ."
+    "city city citadel citadel wilds wilds"
+    ". depths depths depths depths ."
+}
+
+.room {
+    border: 1px solid black;
+    font-size: 50%;
+    text-align: center;
+}
+
+#citadel {
+    grid-area: citadel;
+}
+
+#city {
+    grid-area: city;
+}
+
+#tower {
+    grid-area: tower;
+}
+
+#study {
+    grid-area: study;
+}
+
+#wilds {
+    grid-area: wilds;
+}
+
+#depths {
+    grid-area: depths;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.invisible {
+    opacity: 0;
 }
