@@ -1,6 +1,7 @@
 * {
     border: 0;
     margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .flex {
@@ -47,6 +48,10 @@ img {
     object-fit: scale-down;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* MAP STUFF */
 
 .map {
@@ -63,9 +68,11 @@ img {
 }
 
 .room {
-    border: 1px solid black;
-    font-size: 50%;
+    border-width: 3px;
+    border-style: dashed;
+    border-color: black;
     text-align: center;
+    align-content: center;
 }
 
 #citadel {
@@ -90,6 +97,18 @@ img {
 
 #depths {
     grid-area: depths;
+}
+
+.missing-top {
+    border-width: 0px 3px 3px 3px;
+}
+
+.missing-left {
+    border-width: 3px 3px 3px 0px;
+}
+
+.missing-right {
+    border-width: 3px 0px 3px 3px;
 }
 
 .bio-grid {
