@@ -1,41 +1,43 @@
-let geniusTable = [
-    "Mimic",
-    "Smothering Rug",
-    "Animated Armor",
-];
+let geniusTable = {
+    0: "Mimic",
+    1: "Smothering Rug",
+    2: "Animated Armor",
+};
 
-let kalisTable = [
-    "Death Knight",
-    "Arbalest Squad",
-    "Kill Team",
-];
+let kalisTable = {
+    0: "Death Knight",
+    1: "Arbalest Squad",
+    2: "Kill Team",
+};
 
-let ennaTable = [
-    "Dryads",
-    "Elementals",
-    "Displacer Beasts",
-];
+let ennaTable = {
+    0: ["Fungal Scratcher"],
+    1: ["Fungal Artillery", "Fungal Scratcher"],
+    2: ["Large Ectoplasm", "Ectoplasm"],
+    3: ["Unclean Giant"],
+};
 
-let vorasTable = [
-    "Wyrmlings",
-    "Kobolds",
-    "Hell Hounds",
-];
+let vorasTable = {
+    0: "Wyrmlings",
+    1: "Kobolds",
+    2: "Hell Hounds",
+};
 
-let juriTable = [
-    "Bulette",
-    "Ropers",
-    "Lava Mephits",
-];
+let juriTable = {
+    0: "Bulette",
+    1: "Ropers",
+    2: "Lava Mephits",
+};
 
-let animaTable = [
-    "Wraiths",
-    "Zombie Mob",
-    "Steel Defender",
-];
+let animaTable = {
+    0: ["Bone Rabble"],
+    1: ["Brigand Cutthroat", "Brigand Cutthroat", "Brigand Cuttrhoat"],
+    2: ["Brigand Bloodletter"],
+    3: ["The Thing From The Stars"],
+};
 
 function selectEncounter(table) {
-    return table[Math.floor(Math.random() * table.length)];
+    return table[Math.floor(Math.random() * Object.keys(table).length)];
 };
 
 let randomEncounter = document.getElementById('random');
@@ -46,7 +48,6 @@ let voras = document.getElementById("voras");
 let juri = document.getElementById("juri");
 let anima = document.getElementById("anima");
 let genius = document.getElementById("genius");
-
 
 if(kalis) {
     kalis.addEventListener('click', () => {
