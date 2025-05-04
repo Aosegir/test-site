@@ -21,9 +21,67 @@ let monsterTable = [
     },
     //BREAK
     {
+        name: "Banshee",
+        xp: 1100,
+        area: "City",
+    },
+    //BREAK
+    {
+        name: "Needle Blight",
+        xp: 50,
+        area: "Wilds",
+    },
+    {
+        name: "Twig Blight",
+        xp: 25,
+        area: "Wilds",
+    },
+    {
+        name: "Vine Blight",
+        xp: 100,
+        area: "Wilds",
+    },
+    {
+        name: "Chimera",
+        xp: 2300,
+        area: "Wilds",
+    },
+    {
+        name: "Dryad",
+        xp: 100,
+        area: "Wilds"
+    },
+    //BREAK
+    {
         name: "Mimic",
         xp: 450,
         area: "Study",
+    },
+    {
+        name: "Animated Armor",
+        xp: 200,
+        area: "Study",
+    },
+    {
+        name: "Flying Sword",
+        xp: 45,
+        area: "Study",
+    },
+    {
+        name: "Rug of Smothering",
+        xp: 450,
+        area: "Study",
+    },
+    {
+        name: "Spectator",
+        xp: 700,
+        area: "Study",
+    },
+    //BREAK
+    {
+        name: "Darkmantle",
+        xp: 100,
+        area: "Depths"
     },
 ];
 
@@ -32,12 +90,21 @@ let monsterTable = [
     WHY: this function exists to create variety in the amount of monsters in each encounter
 */
 function determineDifficulty(characters, level) {
-    let threshholds = [];
-    threshholds.push(characters * level * 25);
-    threshholds.push(characters * level * 50);
-    threshholds.push(characters * level * 75);
-    threshholds.push(characters * level * 100);
-    return threshholds[Math.floor(Math.random() * threshholds.length)];
+    let threshhold = characters * level;
+    let randomNumber = Math.floor(Math.random() * 100);
+    if(randomNumber <= 50) {
+        threshhold *= 25;
+        return threshhold;
+    } else if (randomNumber <= 80) {
+        threshhold *= 50;
+        return threshhold;
+    } else if (randomNumber <= 90) {
+        threshhold *= 75;
+        return threshhold;
+    } else {
+        threshhold *= 100;
+        return threshhold;
+    }
 };
 
 function filterMonsterList(table, zone) {
@@ -91,6 +158,7 @@ if(kalis) {
     });
 } else if(enna) {
     enna.addEventListener('click', () => {
+        randomEncounter.innerText = createEncounter("Wilds");
     });
 } else if(voras) {
     voras.addEventListener('click', () => {
@@ -102,5 +170,6 @@ if(kalis) {
     });
 } else if(anima) {
     anima.addEventListener('click', () => {
+        randomEncounter.innerText = createEncounter("City");
     });
 };
